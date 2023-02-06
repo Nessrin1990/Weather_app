@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{%load static%}
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>weather</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="{% static '/style.css' %}">
+
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+
+    #imageContainer{
+      width: 80px;
+      height: 80px;
+    }
+    #imageContainer img{
+      height: 100%;
+      width: 100%;
+    }
+    #desc{
+      display: flex;
+      align-items: center;
+
+    }
+        .button {
+
+  border: none;
+  color: black;
+  padding: 10px10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 10px 8px;
+  cursor: pointer;
+  border-radius:10px;
+}
+  </style>
+</head>
+
+<body>
+  <nav class="row" style="background: blue; color: white;">
+    <div align="center" ><h1 class="col-md-3 text-center">Weather Forcast</h1></div>
+  </nav>
+  <br />
+  <br />
+
+
+
+
+<div class="container">
+  <form form action="/home" method="post">
+     {% csrf_token %}
+    <input type="text" name="city" placeholder="Enter  your City please">
+    <button type="submit" class="btn">Search</button>
+  </form>
+</div>
+  </body>
+
+</html>

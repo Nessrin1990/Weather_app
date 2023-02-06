@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <link rel="stylesheet" href="{% static '/style.css' %}">
+
+
+</head>
+<style>
+
+</style>
+<body>
+
+
+<div class="container">
+    {% if city is not None %}
+
+  <div class="weather">
+    <div class="left">
+      <h3> {{city | capfirst}}</h3>
+        <p> <h3>Description: {{data.weather_description | capfirst}}</h3>
+         <img src = 'http://openweathermap.org/img/w/{{data.weather_icon}}.png'></p>
+    </div>
+    <div class="right">
+      <div class="icon">
+
+        <p>{{Today}}</p>
+      </div>
+      <div class="condition">
+
+        <h3>Temperature: {{data.weather_temperature}}C°</h3>
+          <h3>Pressure: {{data.weather_pressure}}</h3>
+         <h3>Humidity: {{data.weather_humidity}}</h3></div>
+    </div>
+  </div>
+    {% endif %}
+
+</div>
+</body>
+</html>
